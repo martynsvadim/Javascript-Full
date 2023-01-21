@@ -1,8 +1,6 @@
 let sum = 0;
 let integer = 0;
 let remainder = 0;
-const yes = true;
-const no = false;
 
 for (let i = 1; i <= 1000; i += 1) {
   sum += i;
@@ -10,4 +8,4 @@ for (let i = 1; i <= 1000; i += 1) {
   remainder = sum % 1234;
 }
 
-console.log(integer > remainder ? yes : no);
+console.log(integer > remainder);
