@@ -19,10 +19,7 @@ function sum(from, to) {
  * @return {boolean}
  */
 function compareSums(firstFrom, firstTo, secondFrom, secondTo) {
-  if (sum(firstFrom, firstTo) > sum(secondFrom, secondTo)) {
-    return true;
-  }
-  return false;
+  return sum(firstFrom, firstTo) > sum(secondFrom, secondTo);
 }
 
 // examples
