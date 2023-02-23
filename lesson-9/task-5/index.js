@@ -8,15 +8,11 @@
  * */
 
 function mergeObjectsV1(obj1, obj2) {
-  const object1 = Object.assign({}, obj1);
-  const object2 = Object.assign({}, obj2);
-  return Object.assign(object1, object2);
+  return Object.assign({}, obj1, obj2);
 }
 
 function mergeObjectsV2(obj1, obj2) {
-  const object3 = Object.assign({}, obj1);
-  const object4 = Object.assign({}, obj2);
-  return Object.assign(object4, object3);
+  return Object.assign({}, obj2, obj1);
 }
 
 function mergeObjectsV3(obj1, obj2) {

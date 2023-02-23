@@ -17,23 +17,17 @@ function addPropertyV1(obj, key, value) {
 }
 
 function addPropertyV2(obj, key, value) {
-  Object.assign((obj[key] = value));
+  Object.assign(obj, { [key]: value });
 
   return obj;
 }
 
 function addPropertyV3(obj, key, value) {
-  const copyObj = Object.assign({}, obj);
-  Object.assign((copyObj[key] = value));
-
-  return copyObj;
+  return Object.assign({}, obj, { [key]: value });
 }
 
 function addPropertyV4(obj, key, value) {
-  const copyObj = { ...obj };
-  copyObj[key] = value;
-
-  return copyObj;
+  return { ...obj, [key]: value };
 }
 // examples
 const transaction = {

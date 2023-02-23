@@ -10,19 +10,15 @@ const customers = {
 };
 
 const getCustomersList = (obj) => {
-  const copyObject = { ...obj };
+  const value = Object.entries(obj);
 
-  const key = Object.keys(copyObject);
+  const total = value.reduce((acc, item) => {
+    const values = { ...item[1], id: item[0] };
 
-  const value = Object.values(copyObject);
+    return [...acc, values];
+  }, []);
 
-  const indexOfElement = value.reduce((prev, item, index) => {
-    value[index].id = key[index];
-  }, 0);
-
-  return value.sort((a, b) => {
-    if (a.age < b.age) return -1;
-  });
+  return total.sort((a, b) => a.age - b.age);
 };
 
 console.log(getCustomersList(customers));

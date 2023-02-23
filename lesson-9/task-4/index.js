@@ -17,23 +17,17 @@ function addPropertyV1(userData, userId) {
 }
 
 function addPropertyV2(userData, userId) {
-  Object.assign((userData.id = userId));
+  Object.assign(userData, { id: userId });
 
   return userData;
 }
 
 function addPropertyV3(userData, userId) {
-  const copyObj = Object.assign({}, userData);
-  Object.assign({}, (copyObj.id = userId));
-
-  return copyObj;
+  return Object.assign({}, userData, { id: userId });
 }
 
 function addPropertyV4(userData, userId) {
-  const copyObj = { ...userData };
-  copyObj.id = userId;
-
-  return copyObj;
+  return { ...userData, id: userId };
 }
 
 // examples

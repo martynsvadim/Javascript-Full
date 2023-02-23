@@ -6,13 +6,10 @@
  * @return {object}
  */
 function buildObject(keysList, valuesList) {
-  const obj = {};
-
-  const a = keysList.reduce((prev, item, index) => {
-    obj[keysList[index]] = valuesList[index];
-  }, 0);
-
-  return obj;
+  return keysList.reduce(
+    (acc, item, index) => ({ ...acc, [item]: valuesList[index] }),
+    {}
+  );
 }
 
 // examples

@@ -6,8 +6,9 @@
  * @return {boolean}
  */
 function compareObjects(firstObj, secondObj) {
-  const array1 = Object.values(firstObj).sort();
-  const array2 = Object.values(secondObj).sort();
+  const array1 = Object.entries(firstObj).sort();
+  const array2 = Object.entries(secondObj).sort();
+
   return JSON.stringify(array1) === JSON.stringify(array2);
 }
 
@@ -18,8 +19,8 @@ const obj1 = {
 };
 
 const obj2 = {
-  name: 'Bob',
-  age: 17,
+  name: 'Tom',
+  number: 17,
 };
 
 const obj3 = {
