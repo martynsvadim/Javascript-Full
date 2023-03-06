@@ -1,8 +1,7 @@
-const splitString = (text, len) => {
-  if (typeof text !== 'string') {
+const splitString = (text = '', len = 10) => {
+  if (!text === 'string' || len === 0) {
     return null;
   }
-  len === undefined ? (len = 10) : len;
 
   const strArr = [];
   let startPosition = 0;

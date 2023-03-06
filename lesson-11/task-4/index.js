@@ -1,8 +1,5 @@
-const countOccurrences = (text, str) => {
+const countOccurrences = (text = '', str) => {
   let result = 0;
-  if (text === undefined) {
-    text = '';
-  }
   if (str === '') {
     return null;
   }
