@@ -1,8 +1,4 @@
-const reverseString = (str = '') => {
-  if (!str === 'string') {
-    return null;
-  }
-  return str.split('').reverse();
-};
+const reverseString = (str) =>
+  typeof str === 'string' ? str.split('').reverse() : null;
 
-console.log(reverseString('I am ukrainian'));
+console.log(reverseString(5));
