@@ -1,7 +1,6 @@
 {
   "name": "javascript-full",
   "version": "1.0.0",
-  "description": "",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -16,5 +15,18 @@
     "eslint-plugin-import": "^2.27.5",
     "eslint-plugin-prettier": "^4.2.1",
     "prettier": "^2.8.3"
-  }
+  },
+  "devDependencies": {
+    "@babel/core": "^7.21.3",
+    "@babel/preset-env": "^7.20.2"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/martynsvadim/Javascript-Full.git"
+  },
+  "bugs": {
+    "url": "https://github.com/martynsvadim/Javascript-Full/issues"
+  },
+  "homepage": "https://github.com/martynsvadim/Javascript-Full#readme",
+  "description": ""
 }
