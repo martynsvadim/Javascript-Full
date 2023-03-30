@@ -13,10 +13,5 @@ export const reset = () => {
 };
 
 export const getMemo = () => {
-  console.log(num);
+  return num;
 };
-
-add(5);
-decrease(6);
-reset();
-getMemo();
