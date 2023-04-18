@@ -1,19 +1,27 @@
 const timer = {
   secondsPassed: 0,
   minPassed: 0,
+  intervalId: null,
   startTimer() {
-    return setInterval(() => {
-      timer.secondsPassed += 1;
+    this.intervalId = setInterval(() => {
+      this.secondsPassed += 1;
       if (this.secondsPassed === 60) {
         this.minPassed += 1;
         this.secondsPassed = 0;
       }
-    }, 300);
+    }, 1000);
   },
   getTime() {
-    return `${timer.minPassed} : ${timer.secondsPassed}`;
+    if (this.secondsPassed < 10) {
+      return `${this.minPassed}:0${this.secondsPassed}`;
+    }
+    return `${this.minPassed}:${this.secondsPassed}`;
+  },
+  stopTimer() {
+    clearInterval(this.intervalId);
+  },
+  resetTimer() {
+    this.minPassed = 0;
+    this.secondsPassed = 0;
   },
 };
-
-console.log(timer.startTimer());
-console.log(timer.getTime());
