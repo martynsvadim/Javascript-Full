@@ -1,14 +1,3 @@
-// const obj = {
-//   name: 'Argo',
-//   age: 17,
-//   move() {
-//     console.log(`${this.name} is moving`);
-//   },
-//   stop() {
-//     console.log(`${this.name} stopped`);
-//   },
-// };
-
 export function getOwnProperty(obj) {
   let array = [];
   for (let prop in obj) {
@@ -18,5 +7,3 @@ export function getOwnProperty(obj) {
   }
   return array;
 }
-
-console.log(getOwnProperty(obj));

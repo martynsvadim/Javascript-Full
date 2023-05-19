@@ -1,4 +1,4 @@
-export function User(name, age) {
+function User(name, age) {
   this.name = name;
   this.age = age;
 }
@@ -11,18 +11,16 @@ User.prototype.requestNewPhoto = function () {
   console.log(`New photo request was sent for ${this.name}`);
 };
 
-User.prototype.setAge = function (age) {
-  if (this.age >= 25) {
-    console.log(`New photo request was sent for ${this.name}`);
-  }
-
-  if (this.age >= 0) {
-    console.log(this.age);
-  }
-  if (this.age < 0) {
+User.prototype.setAge = function (number) {
+  if (number < 0) {
     return false;
   }
+  this.age = number;
+  if (number >= 25) {
+    this.requestNewPhoto();
+  }
+  return number;
 };
 
-const user1 = new User('Anna', 25);
-user1.setAge();
+const user1 = new User('Anna', 1);
+user1.setAge(30);
