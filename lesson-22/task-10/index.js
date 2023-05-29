@@ -4,6 +4,6 @@ const handleClick = (event) => {
   console.log(event.target.dataset.pageNumber);
 };
 
-[...btnElems].map((elem) => {
+btnElems.forEach((elem) => {
   elem.addEventListener('click', handleClick);
 });

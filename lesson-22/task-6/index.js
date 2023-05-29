@@ -3,7 +3,4 @@ const func = () => {
   console.log('clicked');
 };
 
-btnElem.addEventListener('click', func);
-btnElem.addEventListener('click', () => {
-  btnElem.removeEventListener('click', func);
-});
+btnElem.addEventListener('click', func, { once: true });

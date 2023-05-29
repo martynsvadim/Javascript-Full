@@ -7,8 +7,6 @@ const logTarget = (text, color) => {
   eventsListElem.innerHTML += `<span style= "color: ${color}; margin-left: 8px;">${text}</span>`;
 };
 
-const logRectElem = logTarget.bind(null, '', '');
-
 const logGreenDiv = logTarget.bind(null, 'DIV', 'green');
 const logGreenP = logTarget.bind(null, 'P', 'green');
 const logGreenSpan = logTarget.bind(null, 'SPAN', 'green');
