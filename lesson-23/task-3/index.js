@@ -1,9 +1,9 @@
 const tasks = [
-  { text: 'Buy milk', done: false },
-  { text: 'Pick up Tom from airport', done: false },
-  { text: 'Visit party', done: false },
-  { text: 'Visit doctor', done: true },
-  { text: 'Buy meat', done: true },
+  { text: 'Buy milk', done: false, id: Math.random() },
+  { text: 'Pick up Tom from airport', done: false, id: Math.random() },
+  { text: 'Visit party', done: false, id: Math.random() },
+  { text: 'Visit doctor', done: true, id: Math.random() },
+  { text: 'Buy meat', done: true, id: Math.random() },
 ];
 
 const listElem = document.querySelector('.list');
@@ -11,7 +11,7 @@ const listElem = document.querySelector('.list');
 const renderTasks = (tasksList) => {
   const tasksElems = tasksList
     .sort((a, b) => a.done - b.done)
-    .map(({ text, done }, id) => {
+    .map(({ text, done, id }) => {
       const listItemElem = document.createElement('li');
       listItemElem.classList.add('list__item');
       const checkbox = document.createElement('input');
@@ -30,6 +30,8 @@ const renderTasks = (tasksList) => {
   listElem.innerHTML = '';
   listElem.append(...tasksElems);
 };
+// renderTasks(tasks);
+// console.log(tasks);
 
 // put your code here
 const inputElem = document.querySelector('.task-input');
@@ -41,7 +43,7 @@ const addListItemElem = () => {
     return;
   }
 
-  tasks.push({ text: inputElem.value, done: false });
+  tasks.push({ text: inputElem.value, done: false, id: Math.random() });
   inputTaskElem.value = '';
   renderTasks(tasks);
 };
@@ -56,7 +58,7 @@ const changeDone = (event) => {
   }
 
   const listItemDone = event.target.closest('.list__item-checkbox');
-  const taskDone = tasks[listItemDone.dataset.id];
+  const taskDone = tasks.find((elem) => elem.id === listItemDone.dataset.id);
   taskDone.done = event.target.checked;
   renderTasks(tasks);
 };
